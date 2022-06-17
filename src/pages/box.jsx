@@ -1,8 +1,9 @@
+import Tree from '@/components/canvas/Tree'
 import Instructions from '@/components/dom/Instructions'
 import dynamic from 'next/dynamic'
 
-const Box = dynamic(() => import('@/components/canvas/Tree'), {
-  ssr: false,
+const Home = dynamic(() => import('@/components/canvas/Tree'), {
+  ssr: true,
 })
 
 // Step 5 - delete Instructions components
@@ -16,7 +17,8 @@ const Page = (props) => {
 
 Page.r3f = (props) => (
   <>
-    <Box route='/' />
+    <Home route='/' />
+    <Tree />
   </>
 )
 
