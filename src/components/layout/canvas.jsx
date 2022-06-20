@@ -29,7 +29,7 @@ const LCanvas = ({ children }) => {
       mode='concurrent'
       dpr={[1, 1.5]}
       shadows
-      camera={{ near: 0.1, far: 10, fov: 80 }}
+      camera={{ near: 0.1, far: 10, fov: 50 }}
       style={{
         position: 'absolute',
         top: 0,

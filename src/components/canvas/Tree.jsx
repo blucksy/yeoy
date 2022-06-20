@@ -9,6 +9,7 @@ import {
   Stage,
   Float,
   Billboard,
+  Image,
   Environment,
   Trail,
 } from '@react-three/drei'
@@ -51,19 +52,7 @@ const Tree = ({ route }) => {
         floatingRange={[1, 1.5]}
       >
         <mesh castShadow={false} visible position={[0, -1.2, 0]}>
-          <sphereGeometry
-            contactShadows={false}
-            shadows={false}
-            attach='geometry'
-            args={[1, 16, 16]}
-          />
-          <meshStandardMaterial
-            attach='material'
-            color='magenta'
-            transparent
-            roughness={0.1}
-            metalness={0.1}
-          />
+          <Image scale={2.3} url='/purple.png' transparent />
         </mesh>
       </Float>
       {green(sphere)}
@@ -75,14 +64,7 @@ const Tree = ({ route }) => {
         userData={{ test: 'hello' }}
         position={[0, 0, 0]}
       >
-        <sphereGeometry attach='geometry' args={[0.5, 16, 16]} />
-        <meshStandardMaterial
-          attach='material'
-          color='#ff6700'
-          transparent
-          roughness={0.1}
-          metalness={0.1}
-        />
+        <Image url='/yellow.png' transparent scale={1.5} />
       </mesh>
       <EffectComposer>
         <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.9} height={500} />
@@ -95,14 +77,7 @@ export default Tree
 function green(sphere) {
   return (
     <mesh visible position={[0, 0.1, 0]} ref={sphere}>
-      <sphereGeometry attach='geometry' args={[0.5, 16, 16]} />
-      <meshStandardMaterial
-        attach='material'
-        color='lime'
-        transparent
-        roughness={0.1}
-        metalness={0.1}
-      />
+      <Image scale={1.5} url='/orange.png' transparent />
     </mesh>
   )
 }
