@@ -28,19 +28,19 @@ const Tree = ({ route }) => {
   const sphere = useRef(null)
   const sphere2 = useRef(null)
   useFrame(({ clock }) => {
-    const t = clock.getElapsedTime()
+    const t = clock.getElapsedTime() / 5
 
     // sphere.current.position.x = Math.sin(t) * 3
-    sphere.current.position.z = Math.cos(t) * 2
-    sphere.current.position.x = Math.sin(t) * 2
+    sphere.current.position.x = Math.cos(t) * 1.3
+    sphere.current.position.y = Math.sin(t) * 1.5
+    sphere.current.position.z = Math.sin(t) * 1
 
-    sphere2.current.position.z = Math.cos(t) * -2
-    sphere2.current.position.x = Math.sin(t) * -2
+    sphere2.current.position.x = Math.sin(t) * -1.3
+    sphere2.current.position.y = Math.sin(t) * -1.2
+    sphere2.current.position.z = Math.cos(t) * -1
   })
   return (
     <>
-      <ambientLight shadow={false} intensity={0.5} />
-
       <Environment
         files={['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']}
         background
@@ -51,9 +51,11 @@ const Tree = ({ route }) => {
         floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
         floatingRange={[1, 1.5]}
       >
-        <mesh castShadow={false} visible position={[0, -1.2, 0]}>
-          <Image scale={2.3} url='/purple.png' transparent />
-        </mesh>
+        <Billboard>
+          <mesh castShadow={false} visible position={[0, -1.2, 0]}>
+            <Image scale={1.5} url='/purple.png' transparent />
+          </mesh>
+        </Billboard>
       </Float>
       {green(sphere)}
 
@@ -64,7 +66,9 @@ const Tree = ({ route }) => {
         userData={{ test: 'hello' }}
         position={[0, 0, 0]}
       >
-        <Image url='/yellow.png' transparent scale={1.5} />
+        <Billboard>
+          <Image url='/yellow.png' transparent scale={1.2} />
+        </Billboard>
       </mesh>
       <EffectComposer>
         <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.9} height={500} />
@@ -77,7 +81,9 @@ export default Tree
 function green(sphere) {
   return (
     <mesh visible position={[0, 0.1, 0]} ref={sphere}>
-      <Image scale={1.5} url='/orange.png' transparent />
+      <Billboard>
+        <Image scale={1} url='/orange.png' transparent />
+      </Billboard>
     </mesh>
   )
 }
