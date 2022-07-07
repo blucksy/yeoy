@@ -16,7 +16,7 @@ const Shader = dynamic(() => import('@/components/canvas/Tree'), {
 const Page = (props) => {
   return (
     <>
-      <Instructions />
+      {/* <Instructions /> */}
     </>
   )
 }
