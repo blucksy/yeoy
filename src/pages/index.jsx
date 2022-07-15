@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 // Step 5 - delete Instructions components
 import Instructions from '@/components/dom/Instructions'
-
+import { useState, useEffect } from 'react'
 // import Shader from '@/components/canvas/Shader/Shader'
 
 // Dynamic import is used to prevent a payload when the website start that will include threejs r3f etc..
@@ -14,11 +14,20 @@ const Shader = dynamic(() => import('@/components/canvas/Tree'), {
 
 // dom components goes here
 const Page = (props) => {
-  return (
-    <>
-      {/* <Instructions /> */}
-    </>
-  )
+  //state if user has interacted with the page
+  const [interacted, setInteracted] = useState(false)
+
+  // detect if user has interacted with page
+  useEffect(() => {
+    const handleInteraction = () => {
+      setInteracted(true)
+    }
+    window.addEventListener('mousedown', handleInteraction)
+    return () => {
+      window.removeEventListener('mousedown', handleInteraction)
+    }
+  }, [])
+  return <>{!interacted && <div className='pulsating-circle' />}</>
 }
 
 // canvas components goes here

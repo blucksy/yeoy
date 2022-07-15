@@ -28,16 +28,16 @@ const Tree = ({ route }) => {
   const sphere = useRef(null)
   const sphere2 = useRef(null)
   useFrame(({ clock }) => {
-    const t = clock.getElapsedTime() / 5
+    const t = clock.getElapsedTime() / 6
 
     // sphere.current.position.x = Math.sin(t) * 3
-    sphere.current.position.x = Math.cos(t) * 1.3
+    sphere.current.position.x = Math.cos(t) * 1.35
     sphere.current.position.y = Math.sin(t) * 1.5
-    sphere.current.position.z = Math.sin(t) * 1
+    sphere.current.position.z = Math.sin(t) * 1.5
 
     sphere2.current.position.x = Math.sin(t) * -1.3
-    sphere2.current.position.y = Math.sin(t) * -1.2
-    sphere2.current.position.z = Math.cos(t) * -1
+    sphere2.current.position.y = Math.sin(t) * -1.5
+    sphere2.current.position.z = Math.cos(t) * -1.5
   })
   return (
     <>
@@ -53,7 +53,14 @@ const Tree = ({ route }) => {
       >
         <Billboard>
           <mesh castShadow={false} visible position={[0, -1.2, 0]}>
-            <Image scale={1.5} url='/purple.png' transparent />
+            <Image
+              onClick={() =>
+                (window.location.href = 'https://www.yeoy2002.com/prints')
+              }
+              scale={1.3}
+              url='/purple.png'
+              transparent
+            />
           </mesh>
         </Billboard>
       </Float>
@@ -67,7 +74,12 @@ const Tree = ({ route }) => {
         position={[0, 0, 0]}
       >
         <Billboard>
-          <Image url='/yellow.png' transparent scale={1.2} />
+          <Image
+            onClick={() => (window.location.href = 'https://www.yeoy2002.com/')}
+            url='/yellow.png'
+            transparent
+            scale={1.2}
+          />
         </Billboard>
       </mesh>
       <EffectComposer>
@@ -82,7 +94,14 @@ function green(sphere) {
   return (
     <mesh visible position={[0, 0.1, 0]} ref={sphere}>
       <Billboard>
-        <Image scale={1} url='/orange.png' transparent />
+        <Image
+          scale={1}
+          url='/orange.png'
+          onClick={() =>
+            (window.location.href = 'https://soundcloud.com/user-823746783')
+          }
+          transparent
+        />
       </Billboard>
     </mesh>
   )
