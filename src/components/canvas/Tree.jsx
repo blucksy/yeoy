@@ -55,7 +55,7 @@ const Tree = ({ route }) => {
           <mesh castShadow={false} visible position={[0, -1.2, 0]}>
             <Image
               onClick={() =>
-                (window.location.href = 'https://www.yeoy2002.com/prints')
+                (window.location.href = 'https://www.yeoy.world/world')
               }
               scale={1.3}
               url='/purple.png'
@@ -75,7 +75,7 @@ const Tree = ({ route }) => {
       >
         <Billboard>
           <Image
-            onClick={() => (window.location.href = 'https://www.yeoy2002.com/')}
+            onClick={() => (window.location.href = 'https://www.yeoy.world/')}
             url='/yellow.png'
             transparent
             scale={1.2}
