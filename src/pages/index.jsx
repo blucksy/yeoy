@@ -27,7 +27,7 @@ const Page = (props) => {
       window.removeEventListener('mousedown', handleInteraction)
     }
   }, [])
-  return <>{!interacted && <div className='pulsating-circle' />}</>
+  return <>{!interacted}</>
 }
 
 // canvas components goes here
