@@ -32,17 +32,10 @@ const Header = ({ title = titleDefault }) => {
         <meta name='og:title' content='YEOY.LOL' />
         <meta name='og:type' content='site' />
         <meta name='og:url' content={url} />
-        <meta name='og:image' content={'/purple.png'} />
+        <meta name='og:image' content={'/favicon.ico'} />
         <meta name='og:site_name' content={title} />
         <meta name='og:description' content={description} />
-
-        <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
-        <link rel='apple-touch-icon' sizes='16x16' href='/purple.png' />
-        <link rel='apple-touch-icon' sizes='32x32' href='/purple.png' />
-        <link rel='apple-touch-icon' sizes='180x180' href='/purple.png' />
         <link rel='manifest' href='/manifest.json' />
-        <link rel='mask-icon' color='#000000' href='/purple.png' />
-        <link rel='apple-touch-startup-image' href='/purple.png' />
 
         {/* Meta Tags for HTML pages on Mobile */}
         {/* <meta name="format-detection" content="telephone=yes"/>
@@ -52,7 +45,9 @@ const Header = ({ title = titleDefault }) => {
           content='width=device-width, minimum-scale=1, initial-scale=1.0'
         />
         <meta name='theme-color' content='#000' />
-        <link rel='shortcut icon' href='/purple.png' />
+        {/* favicon */}
+        <link rel='icon' href='/icons/favicon.ico' />
+
       </Head>
     </>
   )
