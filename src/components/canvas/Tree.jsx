@@ -54,9 +54,7 @@ const Tree = ({ route }) => {
         <Billboard>
           <mesh castShadow={false} visible position={[0, -1.2, 0]}>
             <Image
-              onClick={() =>
-                (window.location.href = 'https://www.yeoy.world/')
-              }
+              onClick={() => window.open('https://www.yeoy.world/', '_blank')}
               scale={1.3}
               url='/purple.png'
               transparent
@@ -75,7 +73,9 @@ const Tree = ({ route }) => {
       >
         <Billboard>
           <Image
-            onClick={() => (window.location.href = 'https://www.yeoy.world/world')}
+            onClick={() =>
+              window.open('https://www.instagram.com/miles.sg/?hl=en', '_blank')
+            }
             url='/yellow.png'
             transparent
             scale={1.2}
@@ -98,7 +98,7 @@ function green(sphere) {
           scale={1}
           url='/orange.png'
           onClick={() =>
-            (window.location.href = 'https://soundcloud.com/user-823746783')
+            window.open('https://soundcloud.com/user-823746783', '_blank')
           }
           transparent
         />
